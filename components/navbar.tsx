@@ -15,10 +15,11 @@ import { link as linkStyles } from "@nextui-org/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
 import { CiSearch } from "react-icons/ci";
+import { Button } from "@nextui-org/button";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import { GithubIcon } from "@/components/icons";
+import { GithubIcon, HeartFilledIcon } from "@/components/icons";
 
 export const Navbar = () => {
   const searchInput = (
@@ -90,18 +91,18 @@ export const Navbar = () => {
           <ThemeSwitch />
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">{searchInput}</NavbarItem>
-        {/* <NavbarItem className="hidden md:flex">
+        <NavbarItem className="hidden md:flex">
           <Button
             isExternal
             as={Link}
             className="text-sm font-normal text-default-600 bg-default-100"
-            href={siteConfig.links.sponsor}
+            href={siteConfig.links.twitter}
             startContent={<HeartFilledIcon className="text-danger" />}
             variant="flat"
           >
             Sponsor
           </Button>
-        </NavbarItem> */}
+        </NavbarItem>
       </NavbarContent>
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
