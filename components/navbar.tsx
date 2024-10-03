@@ -1,3 +1,5 @@
+"use client";
+import { usePathname } from "next/navigation";
 import {
   Navbar as NextUINavbar,
   NavbarContent,
@@ -22,6 +24,7 @@ import { ThemeSwitch } from "@/components/theme-switch";
 import { GithubIcon, HeartFilledIcon } from "@/components/icons";
 
 export const Navbar = () => {
+  const pathname = usePathname();
   const searchInput = (
     <Input
       aria-label="Search"
@@ -57,10 +60,12 @@ export const Navbar = () => {
             <NavbarItem key={item.href}>
               <NextLink
                 className={clsx(
-                  linkStyles({ color: "foreground" }),
+                  linkStyles({
+                    color: pathname === item.href ? "primary" : "foreground",
+                  }),
                   "data-[active=true]:text-primary data-[active=true]:font-medium",
                 )}
-                color="foreground"
+                color={pathname === item.href ? "primary" : "foreground"}
                 href={item.href}
               >
                 {item.label}
@@ -119,14 +124,8 @@ export const Navbar = () => {
           {siteConfig.navItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
-                color={
-                  index === 2
-                    ? "primary"
-                    : index === siteConfig.navItems.length - 1
-                      ? "primary"
-                      : "foreground"
-                }
-                href="#"
+                color={item.href === pathname ? "primary" : "foreground"}
+                href={item.href}
                 size="lg"
               >
                 {item.label}

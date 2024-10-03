@@ -17,4 +17,5 @@ export const fontMono = FontMono({
 export const fontDisplay = FontDisplay({
   subsets: ["latin"],
   variable: "--font-display",
+  fallback: ["cursive"],
 });

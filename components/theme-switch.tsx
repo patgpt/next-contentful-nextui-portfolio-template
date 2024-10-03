@@ -1,13 +1,11 @@
 "use client";
 
 import { FC } from "react";
-import { VisuallyHidden } from "@react-aria/visually-hidden";
-import { SwitchProps, useSwitch } from "@nextui-org/switch";
 import { useTheme } from "next-themes";
 import { useIsSSR } from "@react-aria/ssr";
 import clsx from "clsx";
-
-import { SunFilledIcon, MoonFilledIcon } from "@/components/icons";
+import { Switch, SwitchProps } from "@nextui-org/switch";
+import { FaMoon, FaSun } from "react-icons/fa6";
 
 export interface ThemeSwitchProps {
   className?: string;
@@ -25,57 +23,20 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
     theme === "light" ? setTheme("dark") : setTheme("light");
   };
 
-  const {
-    Component,
-    slots,
-    isSelected,
-    getBaseProps,
-    getInputProps,
-    getWrapperProps,
-  } = useSwitch({
-    isSelected: theme === "light" || isSSR,
-    "aria-label": `Switch to ${theme === "light" || isSSR ? "dark" : "light"} mode`,
-    onChange,
-  });
+  const isSelected = theme === "light" || isSSR;
 
   return (
-    <Component
-      {...getBaseProps({
-        className: clsx(
-          "px-px transition-opacity hover:opacity-80 cursor-pointer",
-          className,
-          classNames?.base,
-        ),
-      })}
-    >
-      <VisuallyHidden>
-        <input {...getInputProps()} />
-      </VisuallyHidden>
-      <div
-        {...getWrapperProps()}
-        className={slots.wrapper({
-          class: clsx(
-            [
-              "w-auto h-auto",
-              "bg-transparent",
-              "rounded-lg",
-              "flex items-center justify-center",
-              "group-data-[selected=true]:bg-transparent",
-              "!text-default-500",
-              "pt-px",
-              "px-0",
-              "mx-0",
-            ],
-            classNames?.wrapper,
-          ),
-        })}
-      >
-        {!isSelected || isSSR ? (
-          <SunFilledIcon className="shadow-2xl" color="yellow" size={22} />
-        ) : (
-          <MoonFilledIcon className="shadow-2xl" color="purple" size={22} />
-        )}
-      </div>
-    </Component>
+    <Switch
+      aria-label={`Switch to ${isSelected ? "dark" : "light"} mode`}
+      checked={isSelected}
+      className={clsx(
+        "px-px transition-opacity hover:opacity-80 cursor-pointer",
+        className,
+        classNames?.base,
+      )}
+      endContent={<FaMoon />}
+      startContent={<FaSun />}
+      onChange={onChange}
+    />
   );
 };
