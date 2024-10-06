@@ -2,10 +2,10 @@ import { Link } from "@nextui-org/link";
 import { Snippet } from "@nextui-org/snippet";
 import { Code } from "@nextui-org/code";
 import { button as buttonStyles } from "@nextui-org/theme";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
-import { GithubIcon, LinkedInIcon } from "@/components/icons";
 
 export default function Home() {
   return (
@@ -30,7 +30,7 @@ export default function Home() {
           })}
           href={siteConfig.links.linkedin}
         >
-          <LinkedInIcon />
+          <FaLinkedin />
           LinkedIn
         </Link>
         <Link
@@ -38,7 +38,7 @@ export default function Home() {
           className={buttonStyles({ variant: "bordered", radius: "full" })}
           href={siteConfig.links.github}
         >
-          <GithubIcon />
+          <FaGithub />
           GitHub
         </Link>
       </div>

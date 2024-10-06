@@ -1,0 +1,22 @@
+query getAllPosts {
+  postCollection {
+    items {
+      title
+      slug
+      date
+      coverImage {
+        url
+        title
+      }
+      author {
+        picture {
+          title
+          url
+        }
+      }
+      content {
+        json 
+      }
+    }
+  }
+}

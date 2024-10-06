@@ -1,0 +1,12 @@
+# codegen.yml
+schema: '${CONTENTFUL_GRAPHQL_ENDPOINT}'
+documents: 'lib/contentful/**/*.graphql'
+generates:
+  ./lib/contentful/generated/graphql.ts:
+    plugins:
+      - 'typescript'
+      - 'typescript-operations'
+      - 'typescript-graphql-request'
+config:
+  headers:
+    Authorization: 'Bearer ${CONTENTFUL_PREVIEW_ACCESS_TOKEN}'

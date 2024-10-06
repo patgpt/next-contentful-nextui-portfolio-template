@@ -21,7 +21,7 @@ import { Button } from "@nextui-org/button";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
-import { GithubIcon, HeartFilledIcon } from "@/components/icons";
+import { HeartFilledIcon } from "@/components/icons";
 
 export const Navbar = () => {
   const pathname = usePathname();
@@ -112,7 +112,7 @@ export const Navbar = () => {
 
       <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
         <Link isExternal aria-label="Github" href={siteConfig.links.github}>
-          <GithubIcon className="text-default-500" />
+          <FaGithub className="text-default-500" />
         </Link>
         <ThemeSwitch />
         <NavbarMenuToggle />
