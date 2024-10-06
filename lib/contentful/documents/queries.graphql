@@ -20,3 +20,28 @@ query getAllPosts {
     }
   }
 }
+
+query getPostBySlug($slug:String) {
+  postCollection(where:{
+    slug:$slug
+  }) {
+    items {
+      title
+      slug
+      date
+      coverImage {
+        url
+        title
+      }
+      author {
+        picture {
+          title
+          url
+        }
+      }
+      content {
+        json 
+      }
+    }
+  }
+}

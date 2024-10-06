@@ -1,32 +1,26 @@
 import { notFound } from "next/navigation";
-import Link from "next/link";
-import Image from "next/image";
+import { Link } from "@nextui-org/link";
 
 import { title } from "@/components/primitives";
 import { getAllPosts } from "@/lib/contentful/sdk";
+import PostCard from "@/components/PostCard";
 export default async function BlogPage() {
   const posts = await getAllPosts();
-
-  console.log(posts);
 
   if (!posts) {
     return notFound();
   }
 
+  // console.log(posts);
+
   return (
-    <div>
+    <div className="flex flex-col justify-center items-center gap-4">
       <h1 className={title()}>Blog</h1>
-      <ul className="flex-wrap">
-        {posts.map((post) => (
+      <ul className="flex grid grid-flow-row">
+        {posts?.map((post) => (
           <li key={post?.slug}>
             <Link href={`/blog/${post?.slug}`}>
-              <h2 className="text-pretty, text-2xl mb-4">{post?.title}</h2>
-              <Image
-                alt={post?.title || ""}
-                height={200}
-                src={post?.coverImage?.url || ""}
-                width={200}
-              />
+              <PostCard post={post} />
             </Link>
           </li>
         ))}

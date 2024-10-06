@@ -6,10 +6,12 @@ import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 import { siteConfig } from "@/config/site";
 import { title, subtitle } from "@/components/primitives";
+import HeroAnimation from "@/components/hero-animation";
 
 export default function Home() {
   return (
     <section className="flex flex-col items-center justify-center gap-4 py-8 md:py-10">
+      <HeroAnimation />
       <div className="inline-block max-w-xl text-center justify-center">
         <span className={title()}>Human&nbsp;</span>
         <span className={title({ color: "violet" })}>AI Enahanced&nbsp;</span>
