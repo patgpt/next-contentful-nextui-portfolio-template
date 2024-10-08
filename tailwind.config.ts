@@ -17,8 +17,8 @@ module.exports = {
     },
   },
   darkMode: "class",
-  darkMode: "class",
- plugins: [
+
+  plugins: [
     nextui({
       themes: {
         // Extended Light Theme
