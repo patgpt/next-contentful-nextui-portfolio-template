@@ -2,34 +2,6 @@ import * as React from "react";
 
 import { IconSvgProps } from "@/types/deprecated-index";
 
-// TODO: Lets remove this file and use the icons from the react-icons package
-export const Logo: React.FC<IconSvgProps> = ({
-  size = 36,
-  width,
-  height,
-  ...props
-}) => (
-  <svg
-    height="40"
-    viewBox="0 0 400 400"
-    width="400"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <rect fill="#FFFFFF" height="400" width="400" />
-
-    <g transform="translate(50, 300) scale(1, -1)">
-      <path
-        d="M79 0 L79 222 Q79 246 60 262 Q41 278 15 278 Q-11 278 -30 262 Q-49 246 -49 222 Q-49 198 -30 182 Q-11 166 15 166 Q41 166 60 182 Q79 198 79 222 L79 278 L128 278 L128 0 Z"
-        fill="#6A0DAD"
-      />
-      <path
-        d="M179 0 L179 278 L228 278 L228 166 L276 278 L328 278 L276 166 Q297 150 297 118 Q297 86 276 70 Q255 54 228 54 Q201 54 179 70 L179 0 Z"
-        fill="#6A0DAD"
-      />
-    </g>
-  </svg>
-);
-
 export const MoonFilledIcon = ({
   size = 24,
   width,
