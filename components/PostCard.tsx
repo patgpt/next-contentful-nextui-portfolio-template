@@ -31,7 +31,7 @@ export default function PostCard({ post }: { post: Post }) {
             src="https://nextui.org/images/breathing-app-icon.jpeg"
           />
           <div className="flex flex-col">
-            <p className="text-tiny text-white/60">Read more</p>
+            <p className="text-tiny">Read more →</p>
           </div>
         </div>
         <Button as={"a"} href={`/blog/${post?.slug}`} radius="full" size="sm">
