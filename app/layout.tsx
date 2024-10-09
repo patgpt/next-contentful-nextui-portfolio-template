@@ -46,6 +46,9 @@ export const viewport: Viewport = {
     { media: "(prefers-color-scheme: light)", color: "white" },
     { media: "(prefers-color-scheme: dark)", color: "black" },
   ],
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
 };
 
 export default function RootLayout({
@@ -66,9 +69,10 @@ export default function RootLayout({
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <div className="relative flex flex-col w-full h-screen purple-light dark:purple-dark text-foreground bg-background">
-            <Navbar />
-
-            <main className="w-full">{children}</main>
+            <main className="w-full h-full flex-grow overflow-auto">
+              <Navbar />
+              {children}
+            </main>
             <Footer />
           </div>
         </Providers>

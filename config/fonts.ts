@@ -7,7 +7,7 @@ import { NextFontWithVariable } from "next/dist/compiled/@next/font";
 import {
   Fira_Code as FontMono,
   Nunito as FontSans,
-  Sixtyfour as FontDisplay,
+  Quicksand as FontDisplay,
 } from "next/font/google";
 
 /**

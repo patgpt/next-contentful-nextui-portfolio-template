@@ -52,7 +52,9 @@ export const Navbar = () => {
         <NavbarBrand as="li" className="gap-3 max-w-fit">
           <NextLink className="flex justify-start items-center gap-1" href="/">
             {/* <Logo /> */}
-            <p className="font-display text-primary">{siteConfig.name}</p>
+            <p className="font-display text-primary sm:text-sm">
+              {siteConfig.name}
+            </p>
           </NextLink>
         </NavbarBrand>
         <ul className="hidden lg:flex gap-4 justify-start ml-2">
@@ -79,10 +81,10 @@ export const Navbar = () => {
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"
       >
-        <NavbarItem className="hidden sm:flex gap-2">
+        <NavbarItem className="hidden md:flex gap-2">
           <Link
             isExternal
-            aria-label="Twitter"
+            aria-label="LinkedIn"
             href={siteConfig.links.linkedin}
           >
             <FaLinkedin />
@@ -110,7 +112,7 @@ export const Navbar = () => {
         </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="sm:hidden basis-1 pl-4" justify="end">
+      <NavbarContent className="sm:hidden basis-1 ml-4" justify="end">
         <Link isExternal aria-label="Github" href={siteConfig.links.github}>
           <FaGithub className="text-default-500" />
         </Link>
