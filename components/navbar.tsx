@@ -9,15 +9,16 @@ import {
   NavbarItem,
   NavbarMenuItem,
 } from "@nextui-org/navbar";
-import { FaXTwitter, FaLinkedin, FaGithub, FaHeart } from "react-icons/fa6";
 import { Kbd } from "@nextui-org/kbd";
 import { Link } from "@nextui-org/link";
 import { Input } from "@nextui-org/input";
 import { link as linkStyles } from "@nextui-org/theme";
 import NextLink from "next/link";
 import clsx from "clsx";
-import { CiSearch } from "react-icons/ci";
 import { Button } from "@nextui-org/button";
+import { FaXTwitter, FaHeart } from "react-icons/fa6";
+
+import { CiSearch, FaGithub, FaLinkedin } from "./icons";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
