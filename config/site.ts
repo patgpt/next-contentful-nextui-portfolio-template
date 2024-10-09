@@ -2,6 +2,7 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "Patrick Kelly",
+  url: "https://patgpt.dev", // Ensure this URL matches your deployed site
   description:
     "Showcasing the projects and skills of Patrick Kelly, a passionate developer.",
   navItems: [
