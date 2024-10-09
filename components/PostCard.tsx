@@ -17,6 +17,7 @@ export default function PostCard({ post }: { post: Post }) {
         removeWrapper
         alt="Relaxing app background"
         className="z-0 w-full h-full object-cover"
+        isBlurred={true}
         src={
           post.coverImage?.url ||
           "https://nextui.org/images/card-example-5.jpeg"

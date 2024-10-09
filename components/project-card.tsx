@@ -1,3 +1,5 @@
+"use client";
+import { Button } from "@nextui-org/button";
 import Link from "next/link";
 
 function ProjectCard({
@@ -16,12 +18,17 @@ function ProjectCard({
 
       <h3 className="text-2xl font-semibold text-primary relative">{title}</h3>
       <p className="text-secondary mt-2 relative">{description}</p>
-      <Link
-        className="inline-block mt-4 px-4 py-2 bg-secondary-500 text-secondary-foreground font-medium rounded-lg transition-transform duration-300 hover:-translate-y-1 relative"
+
+      <Button
+        as={Link}
+        className="inline-block mt-4 px-4 py-2 font-medium rounded-lg transition-transform duration-300 hover:-translate-y-1 relative"
+        color="secondary"
         href={href}
+        size="md"
+        variant="solid"
       >
         Learn more →
-      </Link>
+      </Button>
     </div>
   );
 }
